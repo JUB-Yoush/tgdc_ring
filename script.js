@@ -50,8 +50,8 @@ let navigateWebring = () => {
     if (!webringData.sites[newIndex]) return;
 
     document.body.innerHTML = `
-  <main class="p-6 min-h-[100vh] w-[100vw] text-black-900">
-    <p class="font-latinMonoCondOblique">redirecting...</p>
+  <main>
+    <p>redirecting...</p>
   </main>
   `;
     window.location.href = webringData.sites[newIndex].website;
