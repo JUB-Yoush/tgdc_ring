@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+
+    <h1>Toronto game dev web ring</h1>
+    <p>this is a simple static site used to manage a webring for personal sites/blogs for game developers in Toronto/the
+        GTA</p>
+
+    <p>For more information and how to join, check out the README.md file in the <a
+            href="https://github.com/JUB-Yoush/tgdc_ring">Site Source</a></p>
+
+    <h2>List of all sites</h2>
+    <table id="site_table">
+        <tr>
+            <th>Website</th>
+            <th>Name</th>
+            <th>Short Bio</th>
+        </tr>
+    </table>
+</body>
+
+
+<script>
+    const webringData = {
+        "sites": [
+            {
+                "name": "Jayden Brooks",
+                "bio": "I like programming and making games.",
+                "website": "https://jaydenpb.net/"
+            },
+
+            {
+                "name": "Johnny Donuts",
+                "bio": "epic test website",
+                "website": "https://neocities.org/"
+            },
+        ]
+    }
+</script>
+<script src="helpers.js"> </script>
+<script src="script.js"> </script>
+
+</html>
