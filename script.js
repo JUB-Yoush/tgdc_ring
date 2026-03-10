@@ -1,3 +1,4 @@
+// taken from https://github.com/JusGu/uwatering
 const formatUrl = (url) => {
     return url
         .replace(/^https?:\/\/(www\.)?/, "")
@@ -11,7 +12,6 @@ const fuzzyMatch = (searchTerm, target) => {
     return searchTermFormatted.includes(targetFormatted) || targetFormatted.includes(searchTermFormatted);
 };
 
-// taken from https://github.com/JusGu/uwatering
 let navigateWebring = () => {
     const fragment = window.location.hash.slice(1); // #your-site-here?nav=
     if (!fragment.includes("?")) return;
@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
         navigateWebring();
     }
 
-    populateTable()
+    populateList()
     window.addEventListener("hashchange", navigateWebring);
 
 });
 
-let populateTable = () => {
+let populateList = () => {
 
     webringData["sites"].forEach((siteData, i) => {
 
@@ -76,34 +76,20 @@ let populateTable = () => {
 
         var li = document.createElement("li");
 
-        // //var sitetd = document.createElement("td");
         var link = document.createElement("a");
         link.href = siteData["website"]
         link.textContent = `<${siteData.name}>`;
-        // //sitetd.appendChild(link);
 
-        // var rsstd = document.createElement("td");
-        var rss = document.createElement("a");
-        rss.href = siteData["rss"]
-        rss.textContent = "{rss}";
-        // rsstd.appendChild(rss);
 
-        // var name = document.createElement("td");
-        // name.innerText = siteData["name"];
-
-        // var bio = document.createElement("td");
-        // bio.innerText = siteData["bio"];
 
         li.appendChild(link);
         if (siteData.rss != "") {
-
+            var rss = document.createElement("a");
+            rss.href = siteData["rss"]
+            rss.textContent = "{rss}";
             li.appendChild(rss);
         }
         list.appendChild(li);
-        // tr.appendChild(link)
-        // tr.appendChild(rss)
-        // var table = document.getElementById("site_table")
-        // table.appendChild(tr);
     });
 
 }
